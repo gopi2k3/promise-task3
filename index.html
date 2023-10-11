@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+<button class="btn">Order</button>
+<script>
+
+btn=document.querySelector('.btn');
+
+btn.addEventListener('click',ans);
+
+let ifBoolen=false;
+function ans(){
+	
+	let result= new Promise(function(resolve,reject){
+		
+		
+		ifBoolen=true;
+		
+		if(ifBoolen){
+			
+			resolve (`Order Placed`)
+		}
+		else{
+			reject(` Not Placed`)
+		}
+		
+		
+	})
+	
+	
+	result.then((msg)=>{
+		
+	document.write(msg)
+	
+    })
+	.then(()=>{
+		setTimeout(()=>{
+			document.write('<br>')
+			document.write(`You order Prepare...`)
+		},3000)
+		
+	})
+	
+	.then(()=>{
+		let amount=150;
+		let min=25;
+		let name='pizza';
+		
+		
+		setTimeout((a,b,c)=>{
+			document.write('<br>')
+			document.write(`You order is :${c} ,Price : ${a}Rs ,Delivery Time : ${b}Min`)
+		},6000,amount,min,name)
+		
+	})
+	.then((msg)=>{
+		setTimeout(()=>{
+			document.write('<br>')
+			document.write(`You order Delivired`)
+		},9000)
+		
+	})
+
+
+
+.catch((msg)=>{
+	document.write(msg)
+})
+	
+
+}
+
+
+</script>
+</body>
+</html>
